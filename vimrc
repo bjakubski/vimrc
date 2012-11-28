@@ -75,3 +75,7 @@ imap  
 cmap  
 
 set statusline=%<\ %{fugitive#statusline()}\ %f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+
+" let g:solarized_contrast="medium";
+" let g:solarized_visibility="low";
+colorscheme solarized
