@@ -2,7 +2,11 @@
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2001 May 26
-"
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 call pathogen#infect()
 
 " Use Vim settings, rather then Vi settings (much better!).
@@ -69,6 +73,7 @@ autocmd BufEnter *.t set ft=perl
 imap [H <Home>
 imap [F <End>
 nmap <silent> <unique> <F3> <Plug>SelectBuf
+nmap <F8> :TagbarToggle<CR>
 
 set visualbell
 imap  
@@ -79,3 +84,14 @@ set statusline=%<\ %{fugitive#statusline()}\ %f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 " let g:solarized_contrast="medium";
 " let g:solarized_visibility="low";
 colorscheme solarized
+set cursorline
+set cursorcolumn
+
+set colorcolumn=80,100
+
+let g:CommandTMaxFiles=100000
+let g:CommandTMinHeight=20
+let g:CommandTMaxHeight=20
+let g:CommandTMatchWindowAtTop=1
+
+map <C-p> :CommandT<CR>
